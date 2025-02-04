@@ -69,11 +69,16 @@ def jugada_ganadora(movimientos_jugador):
     * movimientos_jugador: dict con el conjunto de movimientos de un 
     jugador 
     """ 
-    #Comprobamos si hay 3 fichas en una fila
+    # Comprobamos si hay 3 fichas en una fila
     for fila in movimientos_jugador: 
         movimientos_columna = movimientos_jugador[fila] 
         if len(movimientos_columna)==3: 
-            return True 
+            return True
+    
+    for columna in movimientos_jugador:
+        movimientos_fila = movimientos_jugador[columna]
+        if len(movimientos_fila) == 3:
+            return True
     return False
 
 def test_no_ganador(): 
